@@ -30,9 +30,20 @@ header {
     color: var(--text-light);
     padding: 1.5rem 20px;
     display: flex; 
-    justify-content: space-between; /* Untuk menyebar H1 (kiri) dan Nav (kanan) */
+    justify-content: space-between; /* Untuk menyebar logo+h1 (kiri) dan Nav (kanan) */
     align-items: center; 
     box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+header .logo-container { /* Kontainer untuk logo dan judul */
+    display: flex;
+    align-items: center;
+}
+
+header .logo-container img { /* Gaya untuk gambar logo */
+    height: 40px; /* Ukuran tinggi logo, sesuaikan jika perlu */
+    width: auto;
+    margin-right: 15px; /* Jarak antara logo dan judul */
 }
 
 header h1 {
@@ -61,56 +72,8 @@ nav a.active {
     background-color: var(--dark-green); /* Hijau sebagai penanda aktif */
 }
 
-/* --- Hero Section Styling --- */
-.hero-section {
-    background-image: url('images/hero-bg.jpg'); /* Lokasi gambar latar belakang Anda */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    height: 500px; /* Tinggi hero section, sesuaikan jika perlu */
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    color: var(--text-light); 
-    position: relative; 
-}
-
-/* Untuk membuat teks lebih mudah dibaca di atas gambar */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay gelap transparan */
-    z-index: 1; 
-}
-
-.hero-content {
-    position: relative; 
-    z-index: 2; 
-    max-width: 800px; 
-    padding: 20px;
-}
-
-.hero-content h2 {
-    color: var(--text-light); 
-    font-size: 3.5em; 
-    margin-bottom: 15px;
-    border-bottom: none; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}
-
-.hero-content p {
-    color: var(--text-light); 
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
 /* --- Main Content Area (Regular Content) --- */
+/* Class ini akan digunakan untuk semua konten utama di bawah header/hero */
 .regular-content { 
     max-width: 960px;
     margin: 2.5rem auto; 
@@ -141,7 +104,7 @@ p {
     margin-bottom: 15px;
 }
 
-/* --- List Styling (untuk Layanan) --- */
+/* --- List Styling (untuk Layanan, Fitur, dll.) --- */
 ul {
     list-style: none;
     padding: 0;
@@ -292,17 +255,23 @@ footer {
         text-align: center;
     }
 
-    .hero-section {
-        height: 350px; /* Tinggi hero section di mobile */
-    }
+    /* Karena hero section gambar dihilangkan, gaya ini mungkin tidak lagi relevan
+       jika Anda tidak memiliki section lain dengan class .hero-section
+       atau jika .regular-content Anda sudah menyesuaikan
+       Jika Anda ingin bagian pertama di bawah header tetap besar, Anda perlu
+       menambahkan section baru untuk itu.
+    */
+    /* .hero-section {
+        height: 350px; 
+    } */
 
-    .hero-content h2 {
-        font-size: 2.2em; /* Ukuran font lebih kecil di mobile */
-    }
+    /* .hero-content h2 {
+        font-size: 2.2em;
+    } */
 
-    .hero-content p {
+    /* .hero-content p {
         font-size: 1.1em;
-    }
+    } */
 
     main, .regular-content {
         margin: 1.5rem 15px;
