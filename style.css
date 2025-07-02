@@ -1,233 +1,320 @@
-/* General Body & Layout */
+/* style.css */
+
+/* --- Variabel Warna --- */
+:root {
+    --primary-blue: #2196F3; /* Biru terang untuk header/aksen utama */
+    --light-blue: #BBDEFB;  /* Biru lebih muda untuk highlight */
+    --accent-green: #4CAF50; /* Hijau cerah untuk tombol/penekanan */
+    --dark-green: #388E3C;   /* Hijau gelap untuk hover */
+    --text-dark: #333333;    /* Warna teks gelap */
+    --text-light: #ffffff;   /* Warna teks terang */
+    --bg-light: #F8F9FA;     /* Latar belakang sangat terang */
+    --bg-white: #FFFFFF;     /* Latar belakang putih */
+    --border-light: #e0e0e0; /* Border ringan */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Pengaturan Global & Body --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Warna latar belakang lembut */
-    color: #333;
+    background-color: var(--bg-light); 
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
-.content {
-    max-width: 960px;
-    margin: 2rem auto; /* Atur margin atas/bawah dan pusatkan */
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sedikit bayangan untuk kedalaman */
-    border-radius: 8px; /* Sudut membulat */
-}
-
-/* Header Styling */
+/* --- Header --- */
 header {
-    background-color: #007bff; /* Warna biru cerah untuk header */
-    color: #ffffff;
-    padding: 1.5rem 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 1.5rem 20px;
+    display: flex; 
+    justify-content: space-between; /* Untuk menyebar H1 (kiri) dan Nav (kanan) */
+    align-items: center; 
+    box-shadow: 0 2px 5px var(--shadow-light);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.2em;
-    padding-bottom: 10px;
+    color: var(--text-light);
 }
 
-/* Navigation Bar */
-nav {
-    margin-top: 10px;
-}
-
+/* --- Navigasi --- */
 nav a {
-    color: #ffffff;
+    color: var(--text-light);
     text-decoration: none;
-    padding: 8px 15px;
-    margin: 0 5px;
+    padding: 10px 18px;
+    margin-left: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background-color: #0056b3; /* Warna lebih gelap saat hover */
+    background-color: rgba(255, 255, 255, 0.2); 
+    transform: translateY(-2px);
 }
 
-/* Fitur List */
-.fitur-list {
-    list-style: none; /* Hilangkan bullet default */
-    padding: 0;
-    margin-top: 30px;
+nav a.active { 
+    background-color: var(--dark-green); /* Hijau sebagai penanda aktif */
 }
 
-.fitur-list li {
-    background-color: #e9f5ff; /* Latar belakang item fitur */
-    margin-bottom: 20px;
+/* --- Hero Section Styling --- */
+.hero-section {
+    background-image: url('images/hero-bg.jpg'); /* Lokasi gambar latar belakang Anda */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 500px; /* Tinggi hero section, sesuaikan jika perlu */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--text-light); 
+    position: relative; 
+}
+
+/* Untuk membuat teks lebih mudah dibaca di atas gambar */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay gelap transparan */
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 2; 
+    max-width: 800px; 
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #cce5ff; /* Border lembut */
 }
 
-/* Buttons */
-button {
-    background-color: #28a745; /* Warna hijau untuk tombol */
-    color: white;
+.hero-content h2 {
+    color: var(--text-light); 
+    font-size: 3.5em; 
+    margin-bottom: 15px;
+    border-bottom: none; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content p {
+    color: var(--text-light); 
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Main Content Area (Regular Content) --- */
+.regular-content { 
+    max-width: 960px;
+    margin: 2.5rem auto; 
+    padding: 30px;
+    background-color: var(--bg-white);
+    box-shadow: 0 5px 20px var(--shadow-light); 
+    border-radius: 10px; 
+}
+
+h2 {
+    color: var(--primary-blue); 
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-blue); 
+}
+
+h3 { /* Tambahan gaya untuk sub-judul di regular-content */
+    color: var(--primary-blue);
+    font-size: 1.6em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* --- List Styling (untuk Layanan) --- */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: var(--light-blue); 
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
+    padding: 18px 25px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+}
+
+ul li strong {
+    color: var(--primary-blue); 
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+/* --- Tombol --- */
+.button-hijau { /* Menggunakan class ini untuk tombol yang lebih umum */
+    background-color: var(--accent-green); 
+    color: var(--text-light);
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 15px;
-    display: inline-block; /* Agar tombol tidak mengambil seluruh lebar */
+    margin-top: 10px;
+    text-decoration: none; /* Pastikan tidak ada underline jika ini link <a> */
+    display: inline-block; /* Agar bisa menerapkan margin/padding dengan baik */
+}
+
+.button-hijau:hover {
+    background-color: var(--dark-green); 
+    transform: translateY(-2px);
+}
+
+button { /* Gaya umum untuk tag <button> jika tidak ada class lain */
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #218838; /* Warna lebih gelap saat hover */
-    transform: translateY(-2px); /* Efek sedikit naik saat hover */
+    background-color: var(--dark-green);
+    transform: translateY(-2px);
 }
 
-/* Toggle Content (Jadwal Dokter & Form Booking) */
-.toggle-content {
-    background-color: #f8f9fa; /* Latar belakang konten yang di-toggle */
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 15px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Bayangan dalam */
-    transition: all 0.4s ease-in-out; /* Transisi untuk tampilan/sembunyi */
-    overflow: hidden; /* Mengatasi isi yang meluap saat transisi */
-}
-
-.toggle-content h3 {
-    color: #0056b3;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 8px;
-}
-
-/* Table Styling (Jadwal Dokter) */
+/* --- Tabel (untuk Jadwal Dokter di Fitur) --- */
 table {
     width: 100%;
-    border-collapse: collapse; /* Menghilangkan spasi antar border sel */
-    margin-top: 15px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
 table th, table td {
-    border: 1px solid #dee2e6;
-    padding: 10px;
+    border: 1px solid var(--border-light);
+    padding: 12px;
     text-align: left;
 }
 
 table th {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-blue); 
+    color: var(--text-light);
     font-weight: bold;
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2; /* Warna latar belakang bergantian untuk baris */
+    background-color: #f2f2f2; 
 }
 
-/* Form Styling (Booking Online) */
+/* --- Form (untuk Booking Online di Fitur & Kontak) --- */
 .toggle-content input[type="text"],
-.toggle-content textarea {
-    width: calc(100% - 22px); /* Kurangi padding dan border dari lebar 100% */
-    padding: 10px;
+.toggle-content textarea,
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 24px); 
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
     font-size: 1em;
-    box-sizing: border-box; /* Pastikan padding termasuk dalam lebar */
-}
-
-.toggle-content textarea {
-    resize: vertical; /* Hanya izinkan perubahan ukuran vertikal */
-    min-height: 80px;
+    box-sizing: border-box;
 }
 
 .toggle-content input[type="text"]:focus,
-.toggle-content textarea:focus {
-    border-color: #007bff; /* Border biru saat fokus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    outline: none; /* Hilangkan outline default browser */
+.toggle-content textarea:focus,
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2); 
+    outline: none;
 }
 
-/* Footer Styling */
+/* --- Footer --- */
 footer {
-    background-color: #343a40; /* Warna gelap untuk footer */
-    color: #ffffff;
+    background-color: #3f51b5; /* Biru agak gelap untuk footer */
+    color: var(--text-light);
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 30px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px var(--shadow-light);
 }
 
-/* Responsive Design */
+/* --- Responsive (untuk tampilan mobile) --- */
 @media (max-width: 768px) {
-    .content {
-        margin: 1rem 15px;
-        padding: 15px;
+    header {
+        flex-direction: column;
+        text-align: center; 
+        padding: 1rem 15px;
+    }
+    header h1 {
+        margin-bottom: 15px; 
+    }
+
+    nav {
+        margin-top: 15px;
+        margin-left: 0;
+        width: 100%;
     }
 
     nav a {
-        display: block; /* Tumpuk link navigasi di layar kecil */
+        display: block; 
         margin: 5px 0;
+        padding: 10px 0;
+        text-align: center;
     }
 
-    button {
-        width: 100%; /* Tombol mengambil lebar penuh */
+    .hero-section {
+        height: 350px; /* Tinggi hero section di mobile */
     }
-}
 
-/* style.css */
+    .hero-content h2 {
+        font-size: 2.2em; /* Ukuran font lebih kecil di mobile */
+    }
 
-/* ... (CSS yang sudah ada untuk body, header, nav, footer, dll.) ... */
+    .hero-content p {
+        font-size: 1.1em;
+    }
 
-main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-}
+    main, .regular-content {
+        margin: 1.5rem 15px;
+        padding: 20px;
+    }
 
-main h2 {
-    color: #007bff;
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-}
+    ul li {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
 
-main p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-main ul {
-    list-style: none; /* Hapus bullet default */
-    padding: 0;
-}
-
-main ul li {
-    background-color: #e9f5ff; /* Latar belakang item layanan */
-    border: 1px solid #cce5ff;
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    display: flex; /* Untuk layout yang lebih baik jika ada ikon */
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-main ul li:hover {
-    transform: translateY(-3px); /* Efek sedikit naik saat hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-main ul li strong {
-    color: #0056b3; /* Warna lebih gelap untuk judul layanan */
-    font-size: 1.1em;
-    margin-right: 10px;
+    ul li strong {
+        margin-bottom: 5px; 
+    }
 }
