@@ -1,306 +1,75 @@
 /* style.css */
 
-/* --- Variabel Warna --- */
-:root {
-    --primary-blue: #2196F3; /* Biru terang untuk header/aksen utama */
-    --light-blue: #BBDEFB;  /* Biru lebih muda untuk highlight */
-    --accent-green: #4CAF50; /* Hijau cerah untuk tombol/penekanan */
-    --dark-green: #388E3C;   /* Hijau gelap untuk hover */
-    --text-dark: #333333;    /* Warna teks gelap */
-    --text-light: #ffffff;   /* Warna teks terang */
-    --bg-light: #F8F9FA;     /* Latar belakang sangat terang */
-    --bg-white: #FFFFFF;     /* Latar belakang putih */
-    --border-light: #e0e0e0; /* Border ringan */
-    --shadow-light: rgba(0, 0, 0, 0.1);
-    --blue-gradient-start: #3F51B5; /* Biru agak gelap untuk gradien */
-    --blue-gradient-end: #2196F3;   /* Biru terang untuk gradien */
-}
-
-/* --- Pengaturan Global & Body --- */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-/* --- Header --- */
-header {
-    background-color: var(--primary-blue);
-    color: var(--text-light);
-    padding: 1.5rem 20px;
-    display: flex;
-    justify-content: space-between; /* Untuk menyebar H1 (kiri) dan Nav (kanan) */
-    align-items: center;
-    box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.2em;
-    color: var(--text-light);
-}
-
-/* --- Navigasi --- */
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 10px 18px;
-    margin-left: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 500;
-}
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
-
-nav a.active {
-    background-color: var(--dark-green); /* Hijau sebagai penanda aktif */
-}
+/* ... (Kode CSS lainnya di atas ini tetap sama) ... */
 
 /* --- Mini Hero Section (khusus Beranda) --- */
 .mini-hero {
-    background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end)); /* Gradien biru yang menarik */
+    background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end));
     color: var(--text-light);
-    padding: 80px 20px; /* Padding yang lebih besar untuk kesan "hero" */
+    /* Ganti padding dari 80px 20px menjadi lebih kecil */
+    padding: 60px 20px; /* Mengurangi padding vertikal */
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih menonjol */
-    margin-bottom: 2.5rem; /* Jarak ke konten di bawahnya */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.5rem;
 }
 
 .mini-hero h2 {
     color: var(--text-light);
-    font-size: 3.5em; /* Judul lebih besar */
-    margin-bottom: 20px;
-    border-bottom: none; /* Hapus border bawah jika ada */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Efek teks lebih menonjol */
+    /* Ganti font-size dari 3.5em menjadi lebih kecil */
+    font-size: 2.8em; /* Mengurangi ukuran judul */
+    margin-bottom: 15px; /* Sedikit kurangi jarak bawah */
+    border-bottom: none;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .mini-hero p {
-    font-size: 1.4em; /* Paragraf lebih besar */
-    max-width: 800px;
-    margin: 0 auto 30px auto; /* Pusatkan paragraf */
+    /* Ganti font-size dari 1.4em menjadi lebih kecil */
+    font-size: 1.2em; /* Mengurangi ukuran paragraf */
+    max-width: 700px; /* Mungkin juga mengurangi lebar maksimum */
+    margin: 0 auto 20px auto; /* Kurangi jarak bawah paragraf */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-/* --- Main Content Area (Regular Content) --- */
-.regular-content {
-    max-width: 960px;
-    margin: 2.5rem auto;
-    padding: 30px;
-    background-color: var(--bg-white);
-    box-shadow: 0 5px 20px var(--shadow-light);
-    border-radius: 10px;
-}
-
-h2 {
-    color: var(--primary-blue);
-    font-size: 2em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--light-blue);
-}
-
-h3 { /* Tambahan gaya untuk sub-judul di regular-content */
-    color: var(--primary-blue);
-    font-size: 1.6em;
-    margin-top: 25px;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 1.1em;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-}
-
-/* --- List Styling (untuk Layanan, Fitur, dll.) --- */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: var(--light-blue);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 18px 25px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-ul li strong {
-    color: var(--primary-blue);
-    font-size: 1.2em;
-    margin-right: 10px;
-}
-
-/* --- Tombol --- */
-.button-hijau { /* Menggunakan class ini untuk tombol yang lebih umum */
+/* --- Tombol di Mini Hero (sesuaikan paddingnya juga) --- */
+.button-hijau {
     background-color: var(--accent-green);
     color: var(--text-light);
-    padding: 15px 30px; /* Padding lebih besar untuk tombol di mini-hero */
+    /* Ganti padding dari 15px 30px menjadi lebih kecil */
+    padding: 12px 25px; /* Mengurangi padding tombol */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em; /* Ukuran font lebih besar */
+    /* Ganti font-size dari 1.1em menjadi lebih kecil */
+    font-size: 1em; /* Mengurangi ukuran font tombol */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    margin-top: 20px; /* Jarak dari paragraf */
+    margin-top: 15px; /* Kurangi jarak atas tombol */
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk tombol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button-hijau:hover {
     background-color: var(--dark-green);
-    transform: translateY(-3px); /* Efek hover yang lebih kentara */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px); /* Sedikit kurangi efek hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Sedikit kurangi bayangan hover */
 }
 
-button { /* Gaya umum untuk tag <button> jika tidak ada class lain */
-    background-color: var(--accent-green);
-    color: var(--text-light);
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-}
+/* ... (Kode CSS lainnya di bawah ini tetap sama) ... */
 
-button:hover {
-    background-color: var(--dark-green);
-    transform: translateY(-2px);
-}
-
-/* --- Tabel (untuk Jadwal Dokter di Fitur) --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: var(--bg-white);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-table th, table td {
-    border: 1px solid var(--border-light);
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: var(--primary-blue);
-    color: var(--text-light);
-    font-weight: bold;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* --- Form (untuk Booking Online di Fitur & Kontak) --- */
-.toggle-content input[type="text"],
-.toggle-content textarea,
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: calc(100% - 24px);
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid var(--border-light);
-    border-radius: 5px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-.toggle-content input[type="text"]:focus,
-.toggle-content textarea:focus,
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
-    outline: none;
-}
-
-/* --- Footer --- */
-footer {
-    background-color: #3f51b5; /* Biru agak gelap untuk footer */
-    color: var(--text-light);
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 40px;
-    box-shadow: 0 -2px 5px var(--shadow-light);
-}
-
-/* --- Responsive (untuk tampilan mobile) --- */
+/* --- Responsive (untuk tampilan mobile, sesuaikan juga jika perlu) --- */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem 15px;
-    }
-    header h1 {
-        margin-bottom: 15px;
-    }
-
-    nav {
-        margin-top: 15px;
-        margin-left: 0;
-        width: 100%;
-    }
-
-    nav a {
-        display: block;
-        margin: 5px 0;
-        padding: 10px 0;
-        text-align: center;
-    }
-
+    /* Pastikan perubahan ini juga konsisten dengan yang di atas */
     .mini-hero {
-        padding: 60px 15px; /* Padding lebih kecil di mobile */
+        padding: 40px 15px; /* Sesuaikan lagi untuk mobile */
     }
 
     .mini-hero h2 {
-        font-size: 2.5em; /* Ukuran font lebih kecil di mobile */
+        font-size: 2em; /* Sesuaikan lagi untuk mobile */
     }
 
     .mini-hero p {
-        font-size: 1.2em;
+        font-size: 1em; /* Sesuaikan lagi untuk mobile */
     }
 
-    .button-hijau {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    main, .regular-content {
-        margin: 1.5rem 15px;
-        padding: 20px;
-    }
-
-    ul li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    ul li strong {
-        margin-bottom: 5px;
-    }
+    /* ... (Sisa media query tetap sama) ... */
 }
