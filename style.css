@@ -30,20 +30,9 @@ header {
     color: var(--text-light);
     padding: 1.5rem 20px;
     display: flex; 
-    justify-content: space-between; /* Untuk menyebar logo+h1 (kiri) dan Nav (kanan) */
+    justify-content: space-between; /* Untuk menyebar H1 (kiri) dan Nav (kanan) */
     align-items: center; 
     box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-header .logo-container { /* Kontainer untuk logo dan judul */
-    display: flex;
-    align-items: center;
-}
-
-header .logo-container img { /* Gaya untuk gambar logo */
-    height: 40px; /* Ukuran tinggi logo, sesuaikan jika perlu */
-    width: auto;
-    margin-right: 15px; /* Jarak antara logo dan judul */
 }
 
 header h1 {
@@ -73,7 +62,7 @@ nav a.active {
 }
 
 /* --- Main Content Area (Regular Content) --- */
-/* Class ini akan digunakan untuk semua konten utama di bawah header/hero */
+/* Class ini akan digunakan untuk semua konten utama di bawah header */
 .regular-content { 
     max-width: 960px;
     margin: 2.5rem auto; 
@@ -254,24 +243,6 @@ footer {
         padding: 10px 0;
         text-align: center;
     }
-
-    /* Karena hero section gambar dihilangkan, gaya ini mungkin tidak lagi relevan
-       jika Anda tidak memiliki section lain dengan class .hero-section
-       atau jika .regular-content Anda sudah menyesuaikan
-       Jika Anda ingin bagian pertama di bawah header tetap besar, Anda perlu
-       menambahkan section baru untuk itu.
-    */
-    /* .hero-section {
-        height: 350px; 
-    } */
-
-    /* .hero-content h2 {
-        font-size: 2.2em;
-    } */
-
-    /* .hero-content p {
-        font-size: 1.1em;
-    } */
 
     main, .regular-content {
         margin: 1.5rem 15px;
