@@ -13,8 +13,7 @@
             <a href="index.html">Beranda</a>
             <a href="tentang.html">Tentang Kami</a>
             <a href="layanan.html">Layanan</a>
-            <a href="fitur.html" class="active">Fitur</a>
-            <a href="kontak.html">Kontak</a>
+            <a href="fitur.html" class="active">Fitur</a> <a href="kontak.html">Kontak</a>
         </nav>
     </header>
 
@@ -23,7 +22,7 @@
         <p>Untuk kenyamanan dan kemudahan pasien, Cipta Hospital menyediakan berbagai fitur dan fasilitas modern.</p>
 
         <h3>Jadwal Dokter</h3>
-        <p>Berikut adalah jadwal beberapa dokter spesialis kami. Silakan hubungi kami untuk jadwal lengkap.</p>
+        <p>Berikut adalah jadwal beberapa dokter spesialis kami. Silakan hubungi kami untuk jadwal lengkap atau gunakan fitur booking online.</p>
         <table>
             <thead>
                 <tr>
@@ -62,17 +61,19 @@
         </table>
 
         <h3>Booking Online</h3>
-        <p>Anda dapat membuat janji temu dengan dokter pilihan Anda melalui formulir booking online kami.</p>
+        <p>Anda dapat membuat janji temu dengan dokter pilihan Anda melalui formulir booking online kami. Cukup klik tombol di bawah ini!</p>
         <div class="booking-form-container">
-            <button class="button-hijau" onclick="toggleBookingForm()">Booking Janji Temu</button>
+            <button class="button-hijau" onclick="toggleBookingForm()">Booking Janji Temu Sekarang</button>
+
             <div id="bookingForm" class="toggle-content" style="display: none;">
                 <h4>Formulir Booking Janji Temu</h4>
                 <form>
                     <input type="text" placeholder="Nama Lengkap" required>
                     <input type="text" placeholder="Nomor Telepon" required>
-                    <input type="text" placeholder="Tanggal (DD/MM/YYYY)" required>
+                    <input type="email" placeholder="Email Anda" required>
+                    <input type="text" placeholder="Tanggal Janji Temu (DD/MM/YYYY)" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
                     <input type="text" placeholder="Spesialisasi/Dokter yang Dituju" required>
-                    <textarea placeholder="Pesan Tambahan (Opsional)"></textarea>
+                    <textarea placeholder="Keluhan Singkat / Keperluan Janji Temu (Opsional)" rows="3"></textarea>
                     <button type="submit" class="button-hijau">Kirim Booking</button>
                 </form>
             </div>
@@ -81,7 +82,7 @@
         <script>
             function toggleBookingForm() {
                 var form = document.getElementById('bookingForm');
-                if (form.style.display === 'none') {
+                if (form.style.display === 'none' || form.style.display === '') {
                     form.style.display = 'block';
                 } else {
                     form.style.display = 'none';
