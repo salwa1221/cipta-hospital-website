@@ -3,75 +3,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fitur Unggulan - Cipta Hospital</title>
+    <title>Fitur - Cipta Hospital</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <h1>Cipta Hospital</h1>
-        </div>
         <nav>
             <a href="index.html">Beranda</a>
             <a href="tentang.html">Tentang Kami</a>
             <a href="layanan.html">Layanan</a>
-            <a href="fitur.html" class="active">Fitur</a> <a href="kontak.html">Kontak</a>
+            <a href="fitur.html" class="active">Fitur</a>
+            <a href="kontak.html">Kontak</a>
         </nav>
     </header>
 
-    <main class="regular-content"> <h2>Fitur Unggulan Kami</h2>
-        <p>Kami menyediakan berbagai fitur untuk memudahkan Anda dalam mengakses layanan dan informasi kesehatan.</p>
+    <main class="regular-content">
+        <h2>Fitur Unggulan</h2>
+        <p>Untuk kenyamanan dan kemudahan pasien, Cipta Hospital menyediakan berbagai fitur dan fasilitas modern.</p>
 
-        <ul class="fitur-list">
-            <li>
-                <button onclick="toggleJadwal()">Lihat Jadwal Dokter</button>
-                <div id="jadwalDokter" class="toggle-content" style="display: none;">
-                    <h3>Jadwal Dokter</h3>
-                    <table border="1" cellpadding="8">
-                        <tr>
-                            <th>Dokter</th>
-                            <th>Hari</th>
-                            <th>Jam</th>
-                        </tr>
-                        <tr>
-                            <td>dr. Andi</td>
-                            <td>Senin - Rabu</td>
-                            <td>09.00 - 12.00</td>
-                        </tr>
-                        <tr>
-                            <td>dr. Rina</td>
-                            <td>Kamis - Sabtu</td>
-                            <td>13.00 - 16.00</td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
+        <h3>Jadwal Dokter</h3>
+        <p>Berikut adalah jadwal beberapa dokter spesialis kami. Silakan hubungi kami untuk jadwal lengkap.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dokter</th>
+                    <th>Spesialisasi</th>
+                    <th>Hari</th>
+                    <th>Jam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>dr. Budi Santoso</td>
+                    <td>Penyakit Dalam</td>
+                    <td>Senin, Rabu, Jumat</td>
+                    <td>09:00 - 15:00</td>
+                </tr>
+                <tr>
+                    <td>dr. Anita Sari</td>
+                    <td>Anak</td>
+                    <td>Selasa, Kamis</td>
+                    <td>10:00 - 16:00</td>
+                </tr>
+                <tr>
+                    <td>dr. Citra Dewi</td>
+                    <td>Kebidanan & Kandungan</td>
+                    <td>Senin, Rabu, Sabtu</td>
+                    <td>14:00 - 20:00</td>
+                </tr>
+                 <tr>
+                    <td>dr. Joko Susilo</td>
+                    <td>Bedah Umum</td>
+                    <td>Selasa, Kamis, Jumat</td>
+                    <td>08:00 - 14:00</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <li>
-                <button onclick="toggleBooking()">Booking Online</button>
-                <div id="formBooking" class="toggle-content" style="display: none;">
-                    <h3>Form Booking</h3>
-                    <input type="text" placeholder="Nama Lengkap" /><br />
-                    <input type="text" placeholder="Nomor HP" /><br />
-                    <textarea placeholder="Keluhan Anda"></textarea><br />
-                    <button>Kirim</button>
-                </div>
-            </li>
-        </ul>
+        <h3>Booking Online</h3>
+        <p>Anda dapat membuat janji temu dengan dokter pilihan Anda melalui formulir booking online kami.</p>
+        <div class="booking-form-container">
+            <button class="button-hijau" onclick="toggleBookingForm()">Booking Janji Temu</button>
+            <div id="bookingForm" class="toggle-content" style="display: none;">
+                <h4>Formulir Booking Janji Temu</h4>
+                <form>
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="text" placeholder="Nomor Telepon" required>
+                    <input type="text" placeholder="Tanggal (DD/MM/YYYY)" required>
+                    <input type="text" placeholder="Spesialisasi/Dokter yang Dituju" required>
+                    <textarea placeholder="Pesan Tambahan (Opsional)"></textarea>
+                    <button type="submit" class="button-hijau">Kirim Booking</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function toggleBookingForm() {
+                var form = document.getElementById('bookingForm');
+                if (form.style.display === 'none') {
+                    form.style.display = 'block';
+                } else {
+                    form.style.display = 'none';
+                }
+            }
+        </script>
     </main>
 
     <footer>
-        <p>&copy; 2025 salwa julianti</p>
+        <p>© 2025 salwa julianti</p>
     </footer>
-
-    <script>
-        function toggleJadwal() {
-            const el = document.getElementById("jadwalDokter");
-            el.style.display = el.style.display === "none" ? "block" : "none";
-        }
-        function toggleBooking() {
-            const el = document.getElementById("formBooking");
-            el.style.display = el.style.display === "none" ? "block" : "none";
-        }
-    </script>
 </body>
 </html>
