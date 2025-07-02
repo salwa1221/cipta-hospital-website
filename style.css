@@ -182,3 +182,23 @@ footer {
     gap: 1rem;
   }
 }
+
+/* Kontak Section Style */
+#formKontak input, 
+#formKontak textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+#formKontak h3 {
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+.content p strong {
+  color: #28a745; /* warna hijau */
+}

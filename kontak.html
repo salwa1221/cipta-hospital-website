@@ -1,35 +1,52 @@
+<!-- kontak.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontak - Cipta Hospital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Kami</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1 class="logo">Cipta Hospital</h1>
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang Kami</a></li>
-        <li><a href="fitur.html">Fitur</a></li>
-        <li><a href="kontak.html" class="active">Kontak</a></li>
-      </ul>
+    <h1>Kontak Kami</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="fitur.html">Fitur</a>
+      <a href="kontak.html">Kontak</a>
     </nav>
   </header>
 
   <section class="content">
-    <h2>Hubungi Kami</h2>
-    <p>Untuk informasi lebih lanjut, silakan hubungi kami:</p>
-    <ul class="kontak-list">
-      <li><strong>📞 Telepon:</strong> 0812-3456-7890</li>
-      <li><strong>✉️ Email:</strong> info@ciptahospital.co.id</li>
-    </ul>
+    <h2>Informasi Kontak</h2>
+    <p>📞 Nomor Telepon: <strong>0812-3456-7890</strong></p>
+    <p>📧 Email: <strong>info@ciptahospital.co.id</strong></p>
+    <p>📸 Instagram: <strong>@ciptahospital</strong></p>
+    <p>📍 Alamat: <strong>Jl. Sehat No. 123, Jakarta</strong></p>
+
+    <br/>
+    <button onclick="toggleForm()">Hubungi Kami</button>
+
+    <div id="formKontak" style="display: none; margin-top: 1rem;">
+      <h3>Formulir Pesan</h3>
+      <input type="text" placeholder="Nama Anda" required /><br />
+      <input type="email" placeholder="Email Anda" required /><br />
+      <textarea placeholder="Pesan Anda" rows="4" required></textarea><br />
+      <button>Kirim</button>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 salwa julianti</p>
+    <p>&copy; 2025 PT Cipta Hospital Indonesia</p>
   </footer>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById("formKontak");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
